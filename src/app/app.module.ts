@@ -3,10 +3,21 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LandingComponent } from './landing/landing.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    AdminComponent,
+    AuthComponent,
+    LoginComponent,
+    DashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
