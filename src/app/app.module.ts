@@ -15,13 +15,14 @@ import { RegisterComponent } from './register/register.component';
     LandingComponent,
     AdminComponent,
     AuthComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LoginComponent,   
     RegisterComponent 
   ],
   providers: [
