@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,28 +8,26 @@ import { LandingComponent } from './landing/landing.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './auth/components/login/login.component'; 
-import { RegisterComponent } from './register/register.component'; 
+import { LoginComponent } from './auth/components/login/login.component';
+import { RegisterComponent } from './register/register.component';
+
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     LandingComponent,
     AdminComponent,
     AuthComponent,
     DashboardComponent,
-    LoginComponent
-
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RegisterComponent 
+    HttpClientModule // Añade HttpClientModule aquí
   ],
-  providers: [
-    provideClientHydration(withEventReplay())
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

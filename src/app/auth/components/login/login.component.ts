@@ -1,6 +1,6 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { UserService } from '../../../services/user/user.service'; // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-login',
@@ -9,32 +9,40 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email: string = ''; // Se agregó una variable para almacenar el correo ingresado.
-  password: string = ''; // Se agregó una variable para almacenar la contraseña ingresada.
-  rememberMe: boolean = false; // Se agregó una variable para manejar la opción de "Recordar contraseña".
+  email: string = '';
+  password: string = '';
+  rememberMe: boolean = false;
 
-  constructor(private router: Router) {} // Se inyecta el Router para realizar la redirección tras un inicio de sesión exitoso.
+  constructor(private router: Router, private userService: UserService) {}
 
   validarLogin() {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar que el correo tenga un formato correcto.
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(this.email)) { // Se verifica si el correo ingresado cumple con el formato adecuado.
+    if (!emailRegex.test(this.email)) {
       alert("Ingrese un correo electrónico válido.");
       return;
     }
 
-    if (this.password.trim() === "") { // Se asegura que la contraseña no esté vacía antes de proceder.
+    if (this.password.trim() === "") {
       alert("Ingrese su contraseña.");
       return;
     }
 
-    // Simulación de autenticación con credenciales predefinidas.
-    if (this.email === "admin@example.com" && this.password === "123456") { 
-      alert("Inicio de sesión exitoso");
-      this.router.navigate(['/pages']); // Se redirige al usuario a la página principal si las credenciales son correctas.
-    } else {
-      alert("Correo o contraseña incorrectos."); // Se notifica al usuario en caso de error en las credenciales.
-    }
+    // Llamada al servicio para autenticar al usuario
+    this.userService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        if (response.message === "Login exitoso") { // Verificar el mensaje de éxito
+          alert("Inicio de sesión exitoso");
+          localStorage.setItem('authToken', response.token); // Guardar el token en localStorage
+          this.router.navigate(['/pages']); // Redirige al usuario a la página principal
+        } else {
+          alert("Correo o contraseña incorrectos.");
+        }
+      },
+      error: (err) => {
+        alert("Error en el servidor. Intente nuevamente más tarde.");
+        console.error(err);
+      }
+    });
   }
 }
-

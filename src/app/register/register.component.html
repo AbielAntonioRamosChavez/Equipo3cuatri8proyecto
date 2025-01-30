@@ -1,64 +1,139 @@
 <div id="layoutAuthentication">
     <div id="layoutAuthentication_content">
-        <main>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5">
-                        <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">Registrate</h3>
-                            </div>
-                            <div class="card-body">
-                                <form>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputFirstName" type="text" placeholder="First Name" />
-                                        <label for="inputFirstName">Apellido Paterno</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputLastName" type="text" placeholder="Last Name" />
-                                        <label for="inputLastName">Apellido Materno</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                        <label for="inputEmail">Correo Electronico</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
-                                        <label for="inputPassword">Contraseña</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Confirm Password" />
-                                        <label for="inputConfirmPassword">Confirmar contraseña</label>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <a class="btn btn-primary" routerLink="/login">Registro</a>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="card-footer text-center py-3">
-                                <div class="small">
-                                    <a routerLink="/login" class="text-primary">Have an account? Go to login</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <main>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-5">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <!-- Encabezado de la tarjeta -->
+                <div class="card-header">
+                  <h3 class="text-center font-weight-light my-4">Regístrate</h3>
                 </div>
+  
+                <!-- Cuerpo de la tarjeta -->
+                <div class="card-body">
+                  <!-- Formulario de registro -->
+                  <form (ngSubmit)="registrarUsuario()" #registerForm="ngForm">
+                    <!-- Campo de nombre -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputFirstName"
+                        type="text"
+                        placeholder="Nombre"
+                        [(ngModel)]="nombre"
+                        name="nombre"
+                        required
+                      />
+                      <label for="inputFirstName">Nombre</label>
+                    </div>
+  
+                    <!-- Campo de apellido paterno -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputLastName"
+                        type="text"
+                        placeholder="Apellido Paterno"
+                        [(ngModel)]="apellidoPaterno"
+                        name="apellidoPaterno"
+                        required
+                      />
+                      <label for="inputLastName">Apellido Paterno</label>
+                    </div>
+  
+                    <!-- Campo de apellido materno -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputLastName"
+                        type="text"
+                        placeholder="Apellido Materno"
+                        [(ngModel)]="apellidoMaterno"
+                        name="apellidoMaterno"
+                        required
+                      />
+                      <label for="inputLastName">Apellido Materno</label>
+                    </div>
+  
+                    <!-- Campo de correo electrónico -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputEmail"
+                        type="email"
+                        placeholder="name@example.com"
+                        [(ngModel)]="correo"
+                        name="correo"
+                        required
+                        email
+                      />
+                      <label for="inputEmail">Correo Electrónico</label>
+                    </div>
+  
+                    <!-- Campo de contraseña -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputPassword"
+                        type="password"
+                        placeholder="Contraseña"
+                        [(ngModel)]="contrasena"
+                        name="contrasena"
+                        required
+                      />
+                      <label for="inputPassword">Contraseña</label>
+                    </div>
+  
+                    <!-- Campo de confirmar contraseña -->
+                    <div class="form-floating mb-3">
+                      <input
+                        class="form-control"
+                        id="inputConfirmPassword"
+                        type="password"
+                        placeholder="Confirmar Contraseña"
+                        [(ngModel)]="confirmarContrasena"
+                        name="confirmarContrasena"
+                        required
+                      />
+                      <label for="inputConfirmPassword">Confirmar Contraseña</label>
+                    </div>
+  
+                    <!-- Botón de envío -->
+                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                      <button class="btn btn-primary" type="submit" [disabled]="registerForm.invalid">
+                        Registrarse
+                      </button>
+                    </div>
+                  </form>
+                </div>
+  
+                <!-- Pie de la tarjeta -->
+                <div class="card-footer text-center py-3">
+                  <div class="small">
+                    <a routerLink="/login" class="text-primary">¿Ya tienes una cuenta? Inicia sesión</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </main>
+          </div>
+        </div>
+      </main>
     </div>
+  
+    <!-- Pie de página -->
     <div id="layoutAuthentication_footer">
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">&copy; Your Website 2025</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">&copy; Your Website 2025</div>
+            <div>
+              <a href="#">Privacy Policy</a>
+              &middot;
+              <a href="#">Terms &amp; Conditions</a>
             </div>
-        </footer>
+          </div>
+        </div>
+      </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</div>
+  </div>
