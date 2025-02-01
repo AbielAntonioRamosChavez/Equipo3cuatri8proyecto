@@ -1,1 +1,113 @@
-<p>leche works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">
+            <img src="assets/img/logo2.jpg" alt="..." />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" 
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!-- Buscador centrado y más largo -->
+            <form id="contactForm" class="d-flex flex-grow-1 me-3" data-sb-form-api-token="API_TOKEN">
+                <input class="form-control w-100" id="name" type="text" placeholder="Buscar..." data-sb-validations="required" />
+                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+            </form>
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link hover-yellow" routerLink="/carrito">
+                        <i class="fas fa-shopping-cart"></i> Mis Ventas
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Ingresar</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Productos</h2>
+        </div>
+        <div class="row">
+            <!-- Producto 1: Leche Alpura Deslactosada -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" routerLink="/leche">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/imgproductos/alpura_deslactosada.jpg" alt="Leche Alpura Deslactosada">
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Leche Alpura Deslactosada</div>
+                        <div class="portfolio-caption-subheading text-muted">$25.00 MXN</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2: Leche Alpura Clásica -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/imgproductos/alpura_entera.jpg" alt="Leche Alpura Clásica">
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Leche Alpura Clásica</div>
+                        <div class="portfolio-caption-subheading text-muted">$24.00 MXN</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 3: Leche Lala Entera -->
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/imgproductos/lala_entera.jpg" alt="Leche Lala Entera">
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Leche Lala Entera</div>
+                        <div class="portfolio-caption-subheading text-muted">$23.50 MXN</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 4: Leche Lala Deslactosada -->
+            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/imgproductos/laladeslatosada.jpg" alt="Leche Lala Deslactosada">
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Leche Lala Deslactosada</div>
+                        <div class="portfolio-caption-subheading text-muted">$24.50 MXN</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 5: Nutri Leche -->
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/imgproductos/nutrileche.jpg" alt="Nutri Leche">
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Nutri Leche</div>
+                        <div class="portfolio-caption-subheading text-muted">$22.00 MXN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

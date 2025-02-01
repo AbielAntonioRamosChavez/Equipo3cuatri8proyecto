@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LecheComponent } from './leche/leche.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LecheComponent } from './leche/leche.component';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    LecheComponent
+    LecheComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
