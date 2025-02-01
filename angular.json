@@ -40,7 +40,8 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css", 
               "public/css/styles.css",
-              "public/css/stylesadmin.css"
+              "public/css/stylesadmin.css",
+              "public/css/stylepedidos.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

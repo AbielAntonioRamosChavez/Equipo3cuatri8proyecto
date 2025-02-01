@@ -10,6 +10,9 @@ import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { PedidosConsultComponent } from './pedidos-consult/pedidos-consult.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { RegisterComponent } from './register/register.component';
     AuthComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EmpleadoComponent,
+    NotificacionesComponent,
+    PedidosConsultComponent
   ],
   imports: [
     BrowserModule,

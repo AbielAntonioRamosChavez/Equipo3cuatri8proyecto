@@ -1,0 +1,27 @@
+
+  <div class="pedidos">
+    <div class="buscar-pedido">
+      <input [(ngModel)]="folio" placeholder="Ingrese el folio" />
+      <button (click)="buscarPedido()">Buscar</button>
+    </div>
+    <div *ngIf="pedido; else noPedido">
+      <div class="medido">Medido</div>
+      <div class="pedido-entrega">Pedido de Entrega</div>
+      <div class="nombre">{{ pedido.nombre }}</div>
+      <div class="telefono">{{ pedido.telefono }}</div>
+      <div class="codigo-entrega">Código de Entrega</div>
+      <div class="productos">
+        <div *ngFor="let producto of pedido.productos">{{ producto }}</div>
+      </div>
+      <div class="tiempo-total">Tiempo Total {{ pedido.tiempoTotal }}</div>
+      <div class="hora">{{ pedido.hora }}</div>
+      <div class="botones">
+        <button (click)="aceptarPedido()">Aceptar</button>
+        <button (click)="generarTicket()">Ticket</button>
+        <button (click)="rechazarPedido()">Rechazar</button>
+      </div>
+    </div>
+    <ng-template #noPedido>
+      <div class="no-pedido">No se ha encontrado ningún pedido.</div>
+    </ng-template>
+  </div>
