@@ -1,0 +1,92 @@
+.frame {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+  }
+  
+  .pedidos {
+    text-align: center;
+  }
+  
+  .buscar-pedido {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .buscar-pedido input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+    font-size: 14px;
+  }
+  
+  .buscar-pedido button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buscar-pedido button:hover {
+    background-color: #0056b3;
+  }
+  
+  .medido, .pedido-entrega, .nombre, .telefono, .codigo-entrega, .tiempo-total, .hora {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .productos div {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .botones button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botones button:hover {
+    background-color: #218838;
+  }
+  
+  .botones button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .botones button:last-child:hover {
+    background-color: #c82333;
+  }
+  
+  .no-pedido {
+    color: #dc3545;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+  }

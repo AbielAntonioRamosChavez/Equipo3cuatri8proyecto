@@ -39,7 +39,13 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css", 
+<<<<<<< HEAD
               "public/css/styles.css"            
+=======
+              "public/css/styles.css",
+              "public/css/stylesadmin.css",
+              "public/css/stylepedidos.css"
+>>>>>>> 60430b37204ecbef69654d36f02d3da8c032ecc5
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
