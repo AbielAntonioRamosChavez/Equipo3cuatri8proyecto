@@ -31,22 +31,28 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Carrito de Compras</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let producto of carrito">
-                <div class="portfolio-item">
-                    <img class="img-fluid" [src]="producto.imagen" [alt]="producto.nombre">
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">{{ producto.nombre }}</div>
-                        <div class="portfolio-caption-subheading text-muted">${{ producto.precio }} MXN</div>
-                        <button class="btn btn-danger mt-2" (click)="eliminarDelCarrito(producto)">
-                            <i class="fas fa-trash"></i> Quitar
-                        </button>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let producto of carrito">
+                <div class="d-flex align-items-center">
+                    <img class="img-thumbnail me-3" [src]="producto.imagen" [alt]="producto.nombre" width="50">
+                    <div>
+                        <h5 class="mb-0">{{ producto.nombre }}</h5>
+                        <small class="text-muted">${{ producto.precio }} MXN</small>
                     </div>
                 </div>
-            </div>
+                <button class="btn btn-danger" (click)="eliminarDelCarrito(producto)">
+                    <i class="fas fa-trash"></i> Quitar
+                </button>
+            </li>
+        </ul>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" [routerLink]="'/horario'">
+                <i class="fas fa-clock"></i> Programar horario de entrega
+            </button>
         </div>
     </div>
 </section>
+
 
 
 

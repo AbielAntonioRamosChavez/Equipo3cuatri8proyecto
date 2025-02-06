@@ -1,1 +1,33 @@
-<p>horario works!</p>
+
+<section class="page-section bg-light" id="horario">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Programar Horario de Recogida</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form (ngSubmit)="confirmarHorario()">
+                    <!-- Selección de Fecha -->
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Selecciona una fecha:</label>
+                        <input type="date" id="fecha" class="form-control" [(ngModel)]="fecha" name="fecha" required>
+                    </div>
+
+                    <!-- Selección de Hora -->
+                    <div class="mb-3">
+                        <label for="hora" class="form-label">Selecciona una hora:</label>
+                        <input type="time" id="hora" class="form-control" [(ngModel)]="hora" name="hora" required>
+                    </div>
+
+                    <!-- Botón para Confirmar -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success" routerLink="/landing">
+                            <i class="fas fa-check-circle"></i> Confirmar Horario
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

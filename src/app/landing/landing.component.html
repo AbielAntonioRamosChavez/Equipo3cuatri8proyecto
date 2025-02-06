@@ -26,94 +26,22 @@
 </nav>
 
 
-<!-- Portfolio Grid-->
-<section class="page-section bg-light" id="portfolio">
+<<section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Productos</h2>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 1-->
+            <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let producto of productos">
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" routerLink="/leche">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/lacteos.jpg" alt="..." />
+                        <img class="img-fluid" [src]="producto.imagen" [alt]="producto.nombre">
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Lacteos</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/botanas.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Botanas</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/galletas.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Galletas</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <!-- Portfolio item 4-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/limpieza_personal.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Limpieza</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <!-- Portfolio item 5-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/cafe.jpg"   alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Cafe</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <!-- Portfolio item 6-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/imageslanding/condimentos.jpg"  alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Legumbres</div>
+                        <div class="portfolio-caption-heading">{{ producto.nombre }}</div>
                     </div>
                 </div>
             </div>
@@ -121,4 +49,25 @@
     </div>
 </section>
 
-
+<!-- 📌 Nueva sección: Historial de Pedidos con QR -->
+<section class="page-section bg-light" id="historial">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Historial de Pedidos</h2>
+        </div>
+        <div *ngIf="historial.length === 0" class="text-center">
+            <p>No hay pedidos programados.</p>
+        </div>
+        <ul class="list-group" *ngIf="historial.length > 0">
+            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let pedido of historial">
+                <div>
+                    <h5 class="mb-0">Pedido #{{ pedido.id }}</h5>
+                    <small class="text-muted">Fecha: {{ pedido.fecha }} - Hora: {{ pedido.hora }}</small>
+                </div>
+                <div>
+                    <img [src]="pedido.qrCode" [alt]="'QR Pedido ' + pedido.id" width="80">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,27 +13,40 @@ import { RegisterComponent } from './register/register.component';
 import { LecheComponent } from './leche/leche.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HorarioComponent } from './horario/horario.component';
+import { HeadarmeniComponent } from './admin/template/headarmeni/headarmeni.component';
+import { SidemenuComponent } from './admin/template/sidemenu/sidemenu.component';
+import { BreadscrumnbComponent } from './admin/template/breadscrumnb/breadscrumnb.component';
+import { FouderComponent } from './admin/template/fouder/fouder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    AdminComponent,
     AuthComponent,
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
     LecheComponent,
     CarritoComponent,
-    HorarioComponent
+    HorarioComponent,
+    HeadarmeniComponent,
+    SidemenuComponent,
+    BreadscrumnbComponent,
+    FouderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule // Añade HttpClientModule aquí
+    HttpClientModule
+  ],
+  exports: [
+    FouderComponent,
+    HeadarmeniComponent,
+    SidemenuComponent,
+    BreadscrumnbComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

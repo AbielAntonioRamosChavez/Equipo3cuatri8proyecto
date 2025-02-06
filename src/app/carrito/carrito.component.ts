@@ -19,7 +19,17 @@ export class CarritoComponent implements OnInit {
     this.carrito = this.carritoService.obtenerCarrito();
   }
 
+  programarHorario() {
+    alert('Función para programar el horario de entrega en construcción.');
+  }
+
+  agregarAlCarrito(producto: any) {
+    this.carrito.push(producto);
+    localStorage.setItem('carrito', JSON.stringify(this.carrito));
+  }
+
   eliminarDelCarrito(producto: any) {
-    this.carrito = this.carrito.filter(p => p !== producto);
+    this.carrito = this.carrito.filter((item: any) => item.nombre !== producto.nombre);
+    localStorage.setItem('carrito', JSON.stringify(this.carrito));
   }
 }
